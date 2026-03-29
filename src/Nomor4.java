@@ -18,7 +18,6 @@ public class Nomor4 {
         for (String card : cards) {
             boolean placed = false;
 
-            // Try oldest stack first
             for (int i = 0; i < stacks.size(); i++) {
                 if (!used.get(i).contains(card)) {
                     stacks.get(i).add(card);
@@ -28,7 +27,6 @@ public class Nomor4 {
                 }
             }
 
-            // If cannot place, create new stack
             if (!placed) {
                 List<String> newStack = new ArrayList<>();
                 Set<String> newSet = new HashSet<>();
@@ -41,7 +39,6 @@ public class Nomor4 {
             }
         }
 
-        // Output (exact format)
         for (int i = 0; i < stacks.size(); i++) {
             List<String> stack = stacks.get(i);
 

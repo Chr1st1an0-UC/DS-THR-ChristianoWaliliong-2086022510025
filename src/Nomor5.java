@@ -20,7 +20,6 @@ public class Nomor5 {
 
         List<List<Card>> players = new ArrayList<>();
 
-        // Read 4 players
         for (int i = 0; i < 4; i++) {
             String[] input = sc.nextLine().split(" ");
             List<Card> hand = new ArrayList<>();
@@ -40,14 +39,14 @@ public class Nomor5 {
 
         Stack<Card> stack = new Stack<>();
 
-        int lastPlayer = -1; // last successful player
+        int lastPlayer = -1; 
 
         while (true) {
 
             List<Card> hand = players.get(current);
             boolean played = false;
 
-            // 🔥 FIRST MOVE OR NEW ROUND
+
             if (stack.isEmpty() || lastPlayer == current) {
                 Card best = findSmallest(hand);
                 stack.push(best);
@@ -75,7 +74,7 @@ public class Nomor5 {
                 }
             }
 
-            // 🏆 Check win
+
             if (hand.isEmpty()) {
                 System.out.println(current + 1);
 
