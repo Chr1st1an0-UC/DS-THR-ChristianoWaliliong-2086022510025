@@ -42,9 +42,7 @@ public class Nomor1 {
 
             int cost = Math.min(strategy1, strategy2);
 
-            // ❗ kalau sudah tidak cukup waktu
             if (time + cost > T) {
-                // lakukan 1 crossing terakhir saja
                 steps.add(arr[left - 1].idx + " " + arr[left].idx + " ->");
                 survivors.add(arr[left - 1].idx);
                 survivors.add(arr[left].idx);
@@ -119,7 +117,6 @@ public class Nomor1 {
             }
         }
 
-        // print output (SATU BARIS sesuai soal)
         for (int i = 0; i < steps.size(); i++) {
             System.out.print(steps.get(i));
             if (i < steps.size() - 1) System.out.print(" ");
